@@ -16,7 +16,6 @@ contract Escrow {
     address public inspector;
     address public lender; 
 
-
     constructor(
         address _nftAddress,
         address payable _seller,

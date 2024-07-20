@@ -50,5 +50,4 @@ describe('Escrow', () => {
             expect(result).to.be.equal(lender.address);
         })
     })
-
 });
