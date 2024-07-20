@@ -17,7 +17,7 @@ describe('Escrow', () => {
         realEstate = await RealEstate.deploy()
 
         // Mint 
-        let transaction = await realEstate.connect(seller).mint("https://ipfs.io/ipfs/QmQUozrHLAusXDxrvsESJ3PYB3rUeUuBAvVWw6nop2uu7c/1.png")
+        let transaction = await realEstate.connect(seller).mint("https://ipfs.io/ipfs/QmXstmQpTKxSKLrSJYNobPTgVKCFrT1cDKEVfwCjB7MaDr?filename=img1.jpg")
         await transaction.wait()
 
         const Escrow = await ethers.getContractFactory('Escrow')

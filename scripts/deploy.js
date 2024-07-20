@@ -15,7 +15,7 @@ async function main() {
   console.log(`Minting 3 properties...\n`)
 
   for (let i = 0; i < 3; i++) {
-    const transaction = await realEstate.connect(seller).mint(`https://ipfs.io/ipfs/QmQVcpsjrA6cr1iJjZAodYwmPekYgbnXGo4DFubJiLc2EB/${i + 1}.json`)
+    const transaction = await realEstate.connect(seller).mint(`https://ipfs.io/ipfs/QmXstmQpTKxSKLrSJYNobPTgVKCFrT1cDKEVfwCjB7MaDr?filename=img1.jpg${i + 1}.json`)
     await transaction.wait()
   }
 
