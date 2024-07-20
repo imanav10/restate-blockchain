@@ -2,8 +2,8 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "/home/imanav10/projects/restate-blockchain/contracts/Escrow.sol": {
-      "lastModificationDate": 1721472724125,
-      "contentHash": "fd8be96d5213ab6f4ba23ae0db6523c2",
+      "lastModificationDate": 1721483944396,
+      "contentHash": "16f79b0af2934e4b01089aceb6c1e9f1",
       "sourceName": "contracts/Escrow.sol",
       "solcConfig": {
         "version": "0.8.17",
