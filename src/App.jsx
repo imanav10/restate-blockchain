@@ -1,7 +1,5 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
-import { ethers ,getAddress} from 'ethers';
-import { Web3Provider } from '@ethersproject/providers';
 
 import Navbar from './components/Navbar';
 import Search from './components/Search';
@@ -10,7 +8,10 @@ import Cards from './components/cards';
 import RealEstate from './abis/RealEstate.json'
 import Escrow from './abis/Escrow.json'
 import config from './config.json' 
+import imgx from './img2.jpg'
 
+
+const { ethers } = require('ethers');
 function App() {
   const [provider, setProvider] = useState(null)
   const [escrow, setEscrow] = useState(null)
@@ -38,6 +39,7 @@ function App() {
     }
 
     setHomes(homes)
+    console.log(homes)
 
     const escrow = new ethers.Contract(config[network.chainId].escrow.address, Escrow, provider)
     setEscrow(escrow)
@@ -64,10 +66,17 @@ function App() {
       <Navbar account={account} setAccount={setAccount} />
       <Search />
       <div className='Cards-section'>
-        <p style={{paddingLeft: '10px',fontFamily: 'monospace',fontSize: '22px'}}>Homes for you</p>
-        <hr />
-        <Cards />
+        {homes.map((home, index) => (
+          <div key = {index}>
+            <p style={{paddingLeft: '10px',fontFamily: 'monospace',fontSize: '22px'}}>Homes for you</p>
+            <hr />
+            <Cards home={home.img} attribute={home.attribute[0].value}/>
+            
+          </div>
+        ))}
+        
       </div>
+      <Cards home={imgx}/>
     </>
   );
 }
